@@ -27,7 +27,7 @@
 	   <article class="post" data-postid="{{$post->id}}">
 		   <p>{{$post->body}}</p>
 		   <div class="info">
-			   Posted by {{$post->user->first_name}} 0n {{$post->created_at }}
+			   Posted by {{$post->user->first_name}} 0n {{date('M jS,Y h:i A',strtotime($post->created_at ))}}
 		   </div>
 		   <div class="interaction">
 			   <a href="#" class="like">{{Auth::user()->likes()->where('post_id',$post->id)->first()? Auth::user()->likes()->where('post_id',$post->id)->first()->like==1?'You liked this post':'Like':'Like'}}</a>|
